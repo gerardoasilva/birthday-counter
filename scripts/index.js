@@ -27,7 +27,7 @@ const second = 1000,
   day = hour * 24;
 
 let countDown = new Date(`${config.birthdate} 00:00:00`).getTime();
-x = setInterval(function() {
+x = setInterval(function () {
   let now = new Date().getTime(),
     distance = countDown - now;
 
@@ -50,7 +50,7 @@ x = setInterval(function() {
     opts = {
       strings: ['¡Feliz', 'Cumpleaños!', config.name],
       charSize: 40,
-      charSpacing: 35,
+      charSpacing: 40,
       lineHeight: 45,
 
       cx: w / 2,
@@ -118,7 +118,7 @@ x = setInterval(function() {
 
     this.reset();
   }
-  Letter.prototype.reset = function() {
+  Letter.prototype.reset = function () {
     this.phase = 'firework';
     this.tick = 0;
     this.spawned = false;
@@ -131,7 +131,7 @@ x = setInterval(function() {
       opts.fireworkBaseLineWidth + opts.fireworkAddedLineWidth * Math.random();
     this.prevPoints = [[0, hh, 0]];
   };
-  Letter.prototype.step = function() {
+  Letter.prototype.step = function () {
     if (this.phase === 'firework') {
       if (!this.spawned) {
         ++this.tick;
@@ -364,7 +364,7 @@ x = setInterval(function() {
     this.size =
       opts.fireworkShardBaseSize + opts.fireworkShardAddedSize * Math.random();
   }
-  Shard.prototype.step = function() {
+  Shard.prototype.step = function () {
     this.x += this.vx;
     this.y += this.vy += opts.gravity;
 
@@ -438,7 +438,7 @@ x = setInterval(function() {
     }
   }
 
-  window.addEventListener('resize', function() {
+  window.addEventListener('resize', function () {
     w = c.width = window.innerWidth;
     h = c.height = window.innerHeight;
 
